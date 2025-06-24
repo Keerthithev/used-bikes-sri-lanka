@@ -10,16 +10,74 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for Professional UI
+# Responsive CSS for Light & Dark mode
 st.markdown("""
     <style>
-    body { font-family: 'Roboto', sans-serif; background-color: #f5f6fa; }
-    .stApp { background-color: #f5f6fa; }
-    .sidebar .sidebar-content { background-color: #1e2a44; color: #ffffff; }
-    .stButton>button { background-color: #4a69bd; color: white; border-radius: 8px; }
-    .stMetric { background-color: #ffffff; border-radius: 10px; padding: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    h1, h2, h3 { color: #1e2a44; }
-    .css-1d391kg { background-color: #ffffff; border-radius: 10px; padding: 20px; }
+    /* Light mode styles */
+    body, .stApp {
+        background-color: #f5f6fa;
+        color: #1e2a44;
+        font-family: 'Roboto', sans-serif;
+    }
+    .sidebar .sidebar-content {
+        background-color: #1e2a44;
+        color: #ffffff;
+    }
+    .stButton>button {
+        background-color: #4a69bd;
+        color: white;
+        border-radius: 8px;
+    }
+    .stMetric {
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        color: #1e2a44;
+    }
+    h1, h2, h3 {
+        color: #1e2a44;
+    }
+    .css-1d391kg {
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        color: #1e2a44;
+    }
+
+    /* Dark mode overrides */
+    @media (prefers-color-scheme: dark) {
+        body, .stApp {
+            background-color: #0f111a;
+            color: #d3d3d3;
+        }
+        .sidebar .sidebar-content {
+            background-color: #12171f;
+            color: #e1e1e1;
+        }
+        .stButton>button {
+            background-color: #2752e8;
+            color: #f0f0f0;
+            border-radius: 8px;
+        }
+        .stMetric {
+            background-color: #1e2233;
+            color: #e1e1e1;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+        }
+        h1, h2, h3 {
+            color: #e1e1e1;
+        }
+        .css-1d391kg {
+            background-color: #1e2233;
+            color: #e1e1e1;
+        }
+        /* Dataframe styles - force white text on dark backgrounds */
+        .stDataFrame, .stDataFrame table {
+            color: #e1e1e1 !important;
+            background-color: #1e2233 !important;
+        }
+    }
     </style>
 """, unsafe_allow_html=True)
 
