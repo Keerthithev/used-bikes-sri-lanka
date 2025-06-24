@@ -10,16 +10,36 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for Professional UI
+# Custom CSS for Professional UI + Mobile Text Visibility Fix
 st.markdown("""
     <style>
-    body { font-family: 'Roboto', sans-serif; background-color: #f5f6fa; color: #1e2a44; }
-    .stApp { background-color: #f5f6fa; color: #1e2a44; }
-    .sidebar .sidebar-content { background-color: #1e2a44; color: #ffffff !important; }
-    .stButton>button { background-color: #4a69bd; color: white; border-radius: 8px; }
-    .stMetric { background-color: #ffffff; border-radius: 10px; padding: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    h1, h2, h3 { color: #1e2a44; }
-    .css-1d391kg { background-color: #ffffff; border-radius: 10px; padding: 20px; }
+    body, .stApp, .css-1v0mbdj, .stMarkdown, .css-1d391kg, .stButton>button, .css-1d391kg * {
+        color: #1e2a44 !important;
+        background-color: #f5f6fa !important;
+    }
+    .sidebar .sidebar-content {
+        background-color: #1e2a44 !important;
+        color: #ffffff !important;
+    }
+    .stButton>button {
+        background-color: #4a69bd !important;
+        color: white !important;
+        border-radius: 8px !important;
+    }
+    .stMetric {
+        background-color: #ffffff !important;
+        border-radius: 10px !important;
+        padding: 10px !important;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+    }
+    h1, h2, h3 {
+        color: #1e2a44 !important;
+    }
+    .css-1d391kg {
+        background-color: #ffffff !important;
+        border-radius: 10px !important;
+        padding: 20px !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
