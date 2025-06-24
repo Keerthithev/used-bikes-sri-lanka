@@ -10,35 +10,88 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for Professional UI + Mobile Text Visibility Fix
+# Stronger Custom CSS for Clear Colors & Mobile Visibility
 st.markdown("""
     <style>
-    body, .stApp, .css-1v0mbdj, .stMarkdown, .css-1d391kg, .stButton>button, .css-1d391kg * {
-        color: #1e2a44 !important;
-        background-color: #f5f6fa !important;
+    /* Backgrounds */
+    body, .stApp {
+        background-color: #f0f2f6 !important;
+        color: #1a1a1a !important;
+        font-family: 'Roboto', sans-serif !important;
     }
+
+    /* Sidebar */
     .sidebar .sidebar-content {
         background-color: #1e2a44 !important;
+        color: #f0f2f6 !important;
+    }
+    .sidebar .sidebar-content * {
+        color: #f0f2f6 !important;
+    }
+
+    /* Buttons */
+    .stButton>button {
+        background-color: #2f49a0 !important;
+        color: #ffffff !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+    }
+    .stButton>button:hover {
+        background-color: #1b2a73 !important;
         color: #ffffff !important;
     }
-    .stButton>button {
-        background-color: #4a69bd !important;
-        color: white !important;
-        border-radius: 8px !important;
-    }
+
+    /* Metric boxes */
     .stMetric {
         background-color: #ffffff !important;
-        border-radius: 10px !important;
-        padding: 10px !important;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+        color: #1a1a1a !important;
+        border-radius: 12px !important;
+        padding: 12px !important;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1) !important;
+        font-weight: 700 !important;
     }
+
+    /* Headings */
     h1, h2, h3 {
         color: #1e2a44 !important;
+        font-weight: 700 !important;
     }
-    .css-1d391kg {
-        background-color: #ffffff !important;
+
+    /* Dataframe styling */
+    .stDataFrame {
+        color: #1a1a1a !important;
+        background-color: #fff !important;
         border-radius: 10px !important;
+    }
+
+    /* Other containers */
+    .css-1d391kg, .stMarkdown {
+        background-color: #ffffff !important;
+        color: #1a1a1a !important;
+        border-radius: 12px !important;
         padding: 20px !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.07) !important;
+    }
+
+    /* Scrollbar for sidebar if overflow */
+    .sidebar-content {
+        scrollbar-width: thin;
+        scrollbar-color: #2f49a0 #1e2a44;
+    }
+    .sidebar-content::-webkit-scrollbar {
+        width: 6px;
+    }
+    .sidebar-content::-webkit-scrollbar-track {
+        background: #1e2a44;
+    }
+    .sidebar-content::-webkit-scrollbar-thumb {
+        background-color: #2f49a0;
+        border-radius: 10px;
+    }
+
+    /* Plotly default backgrounds */
+    .js-plotly-plot {
+        background-color: #ffffff !important;
     }
     </style>
 """, unsafe_allow_html=True)
