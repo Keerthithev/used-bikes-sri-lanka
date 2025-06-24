@@ -13,15 +13,61 @@ st.set_page_config(
 # Custom CSS for Professional UI
 st.markdown("""
     <style>
-    body { font-family: 'Roboto', sans-serif; background-color: #f5f6fa; }
-    .stApp { background-color: #f5f6fa; }
-    .sidebar .sidebar-content { background-color: #1e2a44; color: #ffffff; }
-    .stButton>button { background-color: #4a69bd; color: white; border-radius: 8px; }
-    .stMetric { background-color: #ffffff; border-radius: 10px; padding: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    h1, h2, h3 { color: #1e2a44; }
-    .css-1d391kg { background-color: #ffffff; border-radius: 10px; padding: 20px; }
+    body, .stApp, .streamlit-expanderHeader {
+      color: #1e2a44;
+      background-color: #f5f6fa;
+      font-family: 'Roboto', sans-serif;
+    }
+    .stApp {
+      background-color: #f5f6fa;
+    }
+    .sidebar .sidebar-content {
+      background-color: #1e2a44;
+    }
+    .sidebar .sidebar-content * {
+      color: #ffffff !important;
+    }
+    .stButton>button {
+      background-color: #4a69bd;
+      color: white;
+      border-radius: 8px;
+    }
+    .stMetric {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      color: #1e2a44;
+    }
+    h1, h2, h3 {
+      color: #1e2a44;
+    }
+    .css-1d391kg {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      color: #1e2a44;
+    }
+    .stDataFrame * {
+      color: #1e2a44 !important;
+    }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem !important;
+      }
+      h2 {
+        font-size: 1.4rem !important;
+      }
+      .stDataFrame {
+        font-size: 0.9rem !important;
+      }
+      .stButton>button {
+        width: 100% !important;
+      }
+    }
     </style>
 """, unsafe_allow_html=True)
+
 
 # Load Data
 @st.cache_data
